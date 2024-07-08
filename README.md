@@ -51,7 +51,6 @@
 - Dart language
 - Flutter framework with MVC and Provider architecture
 
-## Project Output :
 
 
 
