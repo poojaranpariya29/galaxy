@@ -51,6 +51,10 @@
 - Dart language
 - Flutter framework with MVC and Provider architecture
 
+## Project Output :
+https://github.com/poojaranpariya29/galaxy/assets/148708401/d719389c-a4c2-44c3-a24d-daa413a83228
+
+
 
 
 
