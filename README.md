@@ -52,6 +52,10 @@
 - Flutter framework with MVC and Provider architecture
 
 ## Project Output :
+
+![A galaxy is a massive, gravitationally bound system that consists of stars, stellar remnants, interstellar gas, dust, dark matter, and other celestial objects  The Milky Way, the galaxy that conta](https://github.com/poojaranpariya29/galaxy/assets/148708401/7c325041-7a79-41ce-9c58-63665b0e790b)
+
+
 https://github.com/poojaranpariya29/galaxy/assets/148708401/d719389c-a4c2-44c3-a24d-daa413a83228
 
 
