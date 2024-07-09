@@ -1,10 +1,10 @@
 import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:galaxy_planets/controllers/providers/json_decode_provider.dart';
-import 'package:galaxy_planets/controllers/providers/theme_provider.dart';
 import 'package:provider/provider.dart';
-import 'package:sizer/sizer.dart';
+
+import '/controllers/providers/json_decode_provider.dart';
+import '/controllers/providers/theme_provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage>
         body: Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/gifs/gifback.gif'),
+              image: AssetImage('assets/gifs/back.gif'),
               fit: BoxFit.cover,
             ),
           ),
@@ -48,9 +48,9 @@ class _HomePageState extends State<HomePage>
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      "Solar System",
+                      "Galaxy",
                       style: TextStyle(
-                        fontSize: 3.h,
+                        fontSize: 22,
                         fontWeight: FontWeight.w500,
                         color: Colors.white.withOpacity(0.8),
                       ),
@@ -90,7 +90,7 @@ class _HomePageState extends State<HomePage>
                             .length,
                         (index) => Column(
                           children: [
-                            GestureDetector(
+                            InkWell(
                               onTap: () {
                                 Navigator.of(context).pushNamed(
                                   'details_page',
@@ -103,7 +103,7 @@ class _HomePageState extends State<HomePage>
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  GestureDetector(
+                                  InkWell(
                                     onTap: () {
                                       animationController.repeat();
                                       setState(() {});
@@ -119,8 +119,8 @@ class _HomePageState extends State<HomePage>
                                                 listen: false)
                                             .galaxyDetails[index]
                                             .image,
-                                        height: 20.h,
-                                        width: 20.h,
+                                        height: 150,
+                                        width: 150,
                                       ),
                                       builder: (context, widget) {
                                         return Transform.rotate(
@@ -131,18 +131,18 @@ class _HomePageState extends State<HomePage>
                                     ),
                                   ),
                                   Container(
-                                    height: 22.h,
-                                    width: 25.h,
+                                    height: 180,
+                                    width: 180,
                                     decoration: BoxDecoration(
                                       color:
                                           (Provider.of<ThemeProvider>(context)
                                                   .themeModel
                                                   .isDark)
-                                              ? Colors.grey.withOpacity(0.4)
+                                              ? Colors.blueGrey.withOpacity(0.8)
                                               : Colors.white.withOpacity(0.8),
-                                      borderRadius: BorderRadius.circular(1.h),
+                                      borderRadius: BorderRadius.circular(20),
                                     ),
-                                    padding: EdgeInsets.all(1.h),
+                                    padding: EdgeInsets.all(10),
                                     child: Column(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
@@ -159,47 +159,31 @@ class _HomePageState extends State<HomePage>
                                                   .galaxyDetails[index]
                                                   .name,
                                               style: TextStyle(
-                                                fontSize: 3.h,
+                                                fontSize: 20,
                                                 fontWeight: FontWeight.bold,
                                               ),
                                             ),
-                                            IconButton(
-                                              onPressed: () {
-                                                if (animationController
-                                                    .isAnimating) {
-                                                  animationController.stop();
-                                                } else {
-                                                  animationController.repeat();
-                                                }
-                                                setState(() {});
-                                              },
-                                              icon: (animationController
-                                                      .isAnimating)
-                                                  ? const Icon(Icons.stop)
-                                                  : const Icon(
-                                                      Icons.play_arrow),
-                                            )
                                           ],
                                         ),
                                         SizedBox(
-                                          height: 3.h,
+                                          height: 10,
                                         ),
                                         Text(
                                           'Radius : ${Provider.of<JsonDecodeProvider>(context).galaxyDetails[index].radius}',
                                           style: TextStyle(
-                                            fontSize: 2.h,
+                                            fontSize: 15,
                                           ),
                                         ),
                                         Text(
                                           'Velocity : ${Provider.of<JsonDecodeProvider>(context).galaxyDetails[index].velocity}',
                                           style: TextStyle(
-                                            fontSize: 2.h,
+                                            fontSize: 15,
                                           ),
                                         ),
                                         Text(
                                           'Gravity : ${Provider.of<JsonDecodeProvider>(context).galaxyDetails[index].gravity}',
                                           style: TextStyle(
-                                            fontSize: 2.h,
+                                            fontSize: 15,
                                           ),
                                         ),
                                       ],
@@ -209,7 +193,7 @@ class _HomePageState extends State<HomePage>
                               ),
                             ),
                             SizedBox(
-                              height: 5.h,
+                              height: 5,
                             ),
                           ],
                         ),

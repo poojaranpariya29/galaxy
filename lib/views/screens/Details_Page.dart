@@ -1,11 +1,10 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:galaxy_planets/controllers/providers/json_decode_provider.dart';
-import 'package:galaxy_planets/controllers/providers/theme_provider.dart';
-import 'package:galaxy_planets/models/json_decode.dart';
 import 'package:provider/provider.dart';
-import 'package:sizer/sizer.dart';
+
+import '/controllers/providers/json_decode_provider.dart';
+import '/controllers/providers/theme_provider.dart';
+import '/models/json_decode.dart';
 
 class DetailsPage extends StatefulWidget {
   const DetailsPage({super.key});
@@ -25,7 +24,7 @@ class _DetailsPageState extends State<DetailsPage> {
         body: Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/gifs/BackgroundBlack.gif'),
+              image: AssetImage('assets/gifs/back.gif'),
               fit: BoxFit.cover,
             ),
           ),
@@ -68,7 +67,7 @@ class _DetailsPageState extends State<DetailsPage> {
               Expanded(
                 flex: 18,
                 child: Padding(
-                  padding: EdgeInsets.all(3.h),
+                  padding: EdgeInsets.all(10),
                   child: SingleChildScrollView(
                     physics: const BouncingScrollPhysics(),
                     child: Column(
@@ -81,8 +80,8 @@ class _DetailsPageState extends State<DetailsPage> {
                           duration: const Duration(seconds: 16),
                           child: Image.asset(
                             data.image,
-                            height: 40.h,
-                            width: 40.h,
+                            height: 180,
+                            width: 180,
                           ),
                           builder: (context, value, widget) {
                             return Transform.rotate(
@@ -92,94 +91,94 @@ class _DetailsPageState extends State<DetailsPage> {
                           },
                         ),
                         Container(
-                          height: 28.h,
-                          width: 44.h,
+                          height: 230,
+                          width: 250,
                           decoration: BoxDecoration(
                             color: (Provider.of<ThemeProvider>(context)
                                     .themeModel
                                     .isDark)
-                                ? Colors.grey.withOpacity(0.4)
+                                ? Colors.blueGrey.withOpacity(0.8)
                                 : Colors.white.withOpacity(0.8),
                             borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(2.h),
-                              bottomRight: Radius.circular(2.h),
+                              topLeft: Radius.circular(10),
+                              bottomRight: Radius.circular(10),
                             ),
                           ),
-                          padding: EdgeInsets.all(1.2.h),
+                          padding: EdgeInsets.all(10),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 data.name,
                                 style: TextStyle(
-                                  fontSize: 3.5.h,
+                                  fontSize: 20,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
                               Text(
                                 data.type,
                                 style: TextStyle(
-                                  fontSize: 2.h,
+                                  fontSize: 15,
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
                               SizedBox(
-                                height: 3.h,
+                                height: 10,
                               ),
                               Text(
                                 'Radius : ${data.radius}',
                                 style: TextStyle(
-                                  fontSize: 2.h,
+                                  fontSize: 15,
                                 ),
                               ),
                               Text(
                                 'Orbital Period : ${data.orbital_period}',
                                 style: TextStyle(
-                                  fontSize: 2.h,
+                                  fontSize: 15,
                                 ),
                               ),
                               Text(
                                 'Gravity : ${data.gravity}',
                                 style: TextStyle(
-                                  fontSize: 2.h,
+                                  fontSize: 15,
                                 ),
                               ),
                               Text(
                                 'Velocity : ${data.velocity}',
                                 style: TextStyle(
-                                  fontSize: 2.h,
+                                  fontSize: 15,
                                 ),
                               ),
                               Text(
                                 'Distance (from Sun) : ${data.distance}',
                                 style: TextStyle(
-                                  fontSize: 2.h,
+                                  fontSize: 15,
                                 ),
                               ),
                             ],
                           ),
                         ),
                         SizedBox(
-                          height: 4.h,
+                          height: 10,
                         ),
                         Align(
                           alignment: Alignment.centerLeft,
                           child: Text(
                             "Details",
                             style: TextStyle(
-                              fontSize: 2.5.h,
+                              fontSize: 15,
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
                             ),
                           ),
                         ),
                         SizedBox(
-                          height: 1.h,
+                          height: 10,
                         ),
                         Text(
                           data.description,
                           style: TextStyle(
-                            fontSize: 2.h,
+                            fontSize: 15,
                             color: Colors.white,
                           ),
                         ),

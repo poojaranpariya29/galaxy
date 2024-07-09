@@ -1,7 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:galaxy_planets/controllers/providers/json_decode_provider.dart';
 import 'package:provider/provider.dart';
+
+import '/controllers/providers/json_decode_provider.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -24,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     Timer(
-      const Duration(seconds: 4),
+      Duration(seconds: 4),
       () {
         Navigator.of(context).pushReplacementNamed('home_page');
       },
@@ -36,7 +37,7 @@ class _SplashScreenState extends State<SplashScreen> {
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage(
-                'assets/images/galaxy.gif',
+                'assets/gifs/splash.gif',
               ),
               fit: BoxFit.cover,
             ),
